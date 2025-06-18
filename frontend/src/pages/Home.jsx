@@ -23,12 +23,13 @@ export default function Home(){
 
 
     return(
-
-        <div>
-            <Addtodos refreshTodos={getTodos} />
-            {todos.map(todo => (
-                    <RenderTodo key={todo._id} todoId={todo._id} td={todo.todo} completed={todo.completed} refreshtodos={getTodos} />
-                ))}
+        <div className="h-screen  flex justify-center">
+            <div className=" pt-20 px-10 bg">
+                <Addtodos refreshTodos={getTodos} />
+                {todos.map(todo => (
+                        <RenderTodo key={todo._id} todoId={todo._id} td={todo.todo} completed={todo.completed} refreshtodos={getTodos} />
+                    ))}
+            </div>
         </div>
     )
 }

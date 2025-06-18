@@ -42,10 +42,10 @@ export default function Addtodos({refreshTodos}){
     }
 
     return(
-        <div>
-            <input value={todo} onChange={(e)=>setTodo(e.target.value)} type="text" placeholder="write your tasks"/> <br />
-            <button onClick={addtodo}>Add</button>
-            <button onClick={deleteall}>delete all</button>
+        <div className="flex">
+            <input className="border border-gray-500 rounded-lg p-2" value={todo} onChange={(e)=>setTodo(e.target.value)} type="text" placeholder="write your tasks"/> <br />
+            <button className=" p-2 ml-2 rounded-lg font-Ubuntu bg-green-600 hover:bg-green-700 hover:text-green-200 text-green-50 border border-green-800" onClick={addtodo}>ADD</button>
+            <button className=" p-2 ml-2 rounded-lg font-Ubuntu bg-red-600 hover:bg-red-700 hover:text-red-200 text-red-50 border border-red-800" onClick={deleteall}>DELETE ALL</button>
         </div>
     )
 }

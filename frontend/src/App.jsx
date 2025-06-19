@@ -12,7 +12,7 @@ function App() {
   const [todo, setTodo] = useState([])
 
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <RecoilRoot>
         <BrowserRouter>
           <React.Suspense fallback={<div>Loading.....</div>}>

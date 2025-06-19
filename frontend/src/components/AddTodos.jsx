@@ -15,7 +15,6 @@ export default function Addtodos({refreshTodos}){
                     Authorization: `Bearer ${token}`
                 }
             })
-            alert("todo addes succesfully")
             setTodo("")
             refreshTodos()
         }
@@ -42,10 +41,13 @@ export default function Addtodos({refreshTodos}){
     }
 
     return(
-        <div className="flex">
-            <input className="border border-gray-500 rounded-lg p-2" value={todo} onChange={(e)=>setTodo(e.target.value)} type="text" placeholder="write your tasks"/> <br />
-            <button className=" p-2 ml-2 rounded-lg font-Ubuntu bg-green-600 hover:bg-green-700 hover:text-green-200 text-green-50 border border-green-800" onClick={addtodo}>ADD</button>
-            <button className=" p-2 ml-2 rounded-lg font-Ubuntu bg-red-600 hover:bg-red-700 hover:text-red-200 text-red-50 border border-red-800" onClick={deleteall}>DELETE ALL</button>
+        <div className="flex flex-col sticky py-5 top-0 mb-8 bg-[#101323] w-screen">
+            <h1 className="text-3xl  font-Ubuntu font-bold text-white mx-auto mb-5">My Tasks</h1>
+            <input className="border border-[#1E2443] mb-4 mx-auto bg-[#181D35] text-[#dadce6] rounded-lg p-2 w-[270px]" value={todo} onChange={(e)=>setTodo(e.target.value)} type="text" placeholder="write your tasks"/>
+            <div className="flex justify-center">
+                <button className=" p-2 rounded-lg font-Ubuntu bg-[#607AFB] hover:bg-[#51588a]  text-white border border-[#3E4E9F]" onClick={addtodo}>ADD</button>
+                <button className=" p-2 ml-2 rounded-lg font-Ubuntu bg-[#21284A] hover:bg-[#34394f] text-white border border-[#1A1F39]" onClick={deleteall}>DELETE ALL</button>
+            </div>
         </div>
     )
 }

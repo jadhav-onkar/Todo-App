@@ -4,12 +4,13 @@ import axios from 'axios'
 import RenderTodo from "../components/RenderTodos"
 import Addtodos from "../components/AddTodos"
 
+
 export default function Home(){
     const [todos, setTodos] = useState([])
 
     async function getTodos(){
             const token = localStorage.getItem("authToken")
-            const res = await axios.get("http://localhost:3000/api/v1/todo",{
+            const res = await axios.get(`${import.meta.env.VITE_TODO_URL}/todo`,{
                 headers:{
                     Authorization: `Bearer ${token}`
                 }

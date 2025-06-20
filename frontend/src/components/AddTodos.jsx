@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from 'axios'
 
+
 export default function Addtodos({refreshTodos}){
     const [todo, setTodo] = useState("")
 
@@ -8,7 +9,7 @@ export default function Addtodos({refreshTodos}){
         e.preventDefault()
         const token = localStorage.getItem("authToken")
         try{
-            const res = await axios.post("http://localhost:3000/api/v1/todo",{
+            const res = await axios.post(`${import.meta.env.VITE_TODO_URL}/todo`,{
                 todo
             },{
                 headers:{
@@ -27,7 +28,7 @@ export default function Addtodos({refreshTodos}){
          e.preventDefault()
         const token = localStorage.getItem("authToken")
         try{
-            const res = await axios.delete("http://localhost:3000/api/v1/todo/delete",{
+            const res = await axios.delete(`${import.meta.env.VITE_TODO_URL}/todo/delete`,{
                 headers:{
                     Authorization: `Bearer ${token}`
                 }

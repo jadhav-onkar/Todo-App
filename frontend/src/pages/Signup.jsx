@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
+
 export default function Signup(){
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
@@ -16,7 +17,7 @@ export default function Signup(){
         }
 
         try{
-            const res = await axios.post("http://localhost:3000/api/v1/signup",{
+            const res = await axios.post(`${import.meta.env.VITE_TODO_URL}/signup`,{
                 username,
                 email,
                 password

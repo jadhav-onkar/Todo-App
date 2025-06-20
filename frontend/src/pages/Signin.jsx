@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+
 export default function Signin(){
      const [email, setEmail] = useState("")
      const [password, setPassword] = useState("")
@@ -15,7 +16,7 @@ export default function Signin(){
             return
         }
         try{
-            const res = await axios.post("http://localhost:3000/api/v1/signin",{
+            const res = await axios.post(`${import.meta.env.VITE_TODO_URL}/signin`,{
                 email,
                 password
             })
@@ -25,7 +26,7 @@ export default function Signin(){
             navigate("/home")
         }
         catch(e){
-            console.log(e)
+            alert(e.response.data.msg)
         }
      }
 

@@ -31,8 +31,8 @@ export default function Signup(){
     }
 
     return(
-        <div className="h-screen flex justify-center bg-[#101323] p-5 items-center">
-            <div  className="bg-[#171c33] p-10 flex flex-col rounded-3xl w-[350px] sm:w-[400px]">
+        <div className="min-h-screen flex justify-center bg-[#101323] p-5 items-center">
+            <div  className="bg-[#171c33] mx-2 sm:mx-0 p-10 flex flex-col rounded-3xl w-[350px] sm:w-[400px]">
                 <h1 className="text-3xl font-Ubuntu font-bold text-gray-400 mx-auto mb-5">Sign Up</h1>
 
                 <p className="font-bold mb-2 text-gray-400">Username</p>

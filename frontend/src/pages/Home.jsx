@@ -26,7 +26,7 @@ export default function Home(){
     return(
         <div className="bg-[#101323] min-h-screen w-screen flex flex-col">
                 <Addtodos refreshTodos={getTodos} />
-                <div className="w-screen flex flex-col mx-2 justify-center">
+                <div className="w-screen flex flex-col justify-center">
                     {todos.map(todo => (
                             <RenderTodo key={todo._id} todoId={todo._id} td={todo.todo} completed={todo.completed} refreshtodos={getTodos} />
                         ))}

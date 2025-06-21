@@ -43,7 +43,7 @@ export default function RenderTodo({ todoId, td, completed, refreshtodos }) {
   return (
     <div className={`${completed ? 'bg-[#21284A]' : 'bg-red-400' } mx-auto flex justify-between items-center mb-2 rounded-md w-[330px] sm:w-[600px] p-2`}>
           <div className='text-white font-semibold'>{td}</div>
-          <div className='bg-blue-300 flex'>
+          <div className='flex'>
               <button className='text-gray-300 mr-2 bg-[#444c74] hover:bg-[#363d5c] p-1 rounded-lg' onClick={handleOnClick}>{completed ? 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />

@@ -27,9 +27,23 @@ export default function Home(){
         <div className="bg-[#101323] min-h-screen w-screen flex flex-col">
                 <Addtodos refreshTodos={getTodos} />
                 <div className="w-screen flex flex-col justify-center">
-                    {todos.map(todo => (
-                            <RenderTodo key={todo._id} todoId={todo._id} td={todo.todo} completed={todo.completed} refreshtodos={getTodos} />
-                        ))}
+                    {todos.map(todo => {
+                            let displayText = todo.todo;
+
+                            if (displayText.length > 15 && displayText.split(" ").length === 1) {
+                                displayText = displayText.match(/.{1,15}/g).join(" ");
+                            }
+
+                            return (
+                                <RenderTodo 
+                                    key={todo._id} 
+                                    todoId={todo._id} 
+                                    td={displayText} 
+                                    completed={todo.completed} 
+                                    refreshtodos={getTodos} 
+                                />
+                            );
+                        })}
                 </div>
         </div>
     )
